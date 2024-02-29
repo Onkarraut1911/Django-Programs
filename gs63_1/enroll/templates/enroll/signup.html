@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Form</title>
+  <link rel="stylesheet" href=" {% static 'style2.css' %}">
+</head>
+<body>
+  <form action="" method = "post" novalidate>
+    {% csrf_token %}
+   
+     {% for form in form %}
+     {{form.label_tag}}{{form}}{{ form.errors | striptags}}
+     <br><br>
+     {% endfor %}
+    <input type="submit" name="" id=" " value = "submit">
+  </form>
+  <a href="{% url 'login' %}">login </a>
+  {% if messages %}
+  {% for message in messages %}
+  <small {% if message.tag %}class="msg"{% endif %}>{{message}}</small>
+  {% endfor %}
+  {% endif %}
+</body>
+</html>

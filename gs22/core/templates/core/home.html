@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+{% block title %} {{block.super}} Home {% endblock title %}
+
+{% comment %}
+{{block.super}} is inherited default value print here with Home
+{% endcomment %}
+
+{% block content %}
+<h1>I am new Home Page : {{d}}</h1>
+<!-- we can pass the key from view function and also its access by included templates -->
+
+{% include 'core/topcourses.html' with p='PHP' only %}
+<!-- This 'only' keyword used for only pass p key i.e. does not show 'd' key here -->
+{% include 'core/topcourses.html' with p='PHP' %} <!-- This include tag include  the template file code here -->
+<!-- also we can pass the context in the template  with keyword 'with' , here we pass P key and value PHP -->
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Django Course</li>
+      </ul>
+    </nav>
+    <h1>I Am Home Page</h1>
+  </body>
+</html> -->

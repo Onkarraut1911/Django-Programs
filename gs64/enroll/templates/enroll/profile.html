@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile </title>
+</head>
+<body>
+  
+  {% csrf_token %}
+  <h1>WELCOME {{name}}</h1>
+  <table>
+    
+    <tr>
+      <th>Username</th>
+      <th>First_name</th>
+      <th>last_name</th>
+      <th>email</th>
+      <th>password</th>
+    </tr>
+    {% comment %} {% for  in  %}{% endfor %} {% endcomment %}
+  </table>
+  <a href="{% url 'changepass1' %}">Change Password1</a>
+  <a href="{% url 'changepass' %}">Change Password</a>
+  <a href="{%url 'logout' %}">Logout</a>
+</body>
+</html>

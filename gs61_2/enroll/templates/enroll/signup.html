@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up Form</title>
+</head>
+<body>
+  {% comment %} <form action="" method="post ">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="submit"> {% endcomment %}
+
+    <form action="" method="post" novalidate>
+      {% csrf_token %}
+      {% for fm in form %}
+      {{fm.label_tag}} 
+      {% comment %}
+        this line  write for the labels(usrname , passoword ...etc)
+      {% endcomment %}
+        
+      {{fm}} 
+      {% comment %}
+        This is the fields of labels
+      {% endcomment %}
+        {{fm.errors | striptags}} 
+        {% comment %}
+          if occured any error then print error
+        {% endcomment %}
+        <br><br>
+          
+      {% endfor %}
+      <input type="submit" value = "submit">
+    </form>
+
+    {% comment %} {% if messages %}
+    {% for message in messages %}
+    <h5>message</h5>
+    {% endfor %}
+    {% endif %} {% endcomment %}
+  
+</body>
+</html>

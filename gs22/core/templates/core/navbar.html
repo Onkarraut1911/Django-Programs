@@ -1,0 +1,19 @@
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/about">About</a></li> <!-- if sometime you want to change the url then this method is not work -->
+
+        {% comment %} <!-- <li><a href="{{abc}}">About</a></li> --> {% endcomment %}
+
+        <li><a href="/cor/django">Django Course</a></li>
+
+        {% url 'aboutus' as co %}
+        <li><a href="{{co}}">Django Course</a></li>
+
+        <!-- <li><a href="{% url 'aboutus' %}">Django Course</a></li> -->
+
+        <!-- url tag in django use to nevigate between the file 'aboutus' is the name in urls.py for django path -->
+        <!-- also in url tag we can pass dynamic data -->
+    </ul>
+</nav>

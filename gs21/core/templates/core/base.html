@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %} Other {% endblock title %}</title>
+  <!-- 'Other' is the default value if you dont write title tag in your page then this print in that -->
+
+  {% block corecss %}
+  <link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+  {% endblock corecss %}
+
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+
+      <li><a href="/about">About</a></li> <!-- if sometime you want to change the url then this method is not work -->
+
+      {% comment %} <!-- <li><a href="{{abc}}">About</a></li> --> {% endcomment %}
+
+      <li><a href="/cor/django">Django Course</a></li>
+
+      {% url 'aboutus' as co %}
+      <li><a href="{{co}}">Django Course</a></li>
+
+      <!-- <li><a href="{% url 'aboutus' %}">Django Course</a></li> -->
+
+      <!-- url tag in django use to nevigate between the file 'aboutus' is the name in urls.py for django path -->
+      <!-- also in url tag we can pass dynamic data -->
+    </ul>
+  </nav>
+  {% block content %} {% endblock content %}
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %} Other {% endblock title %}</title>
+  <!-- 'Other' is the default value if you dont write title tag in your page then this print in that -->
+
+  {% block corecss %}
+  <link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+  {% endblock corecss %}
+
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Django Course</a></li>
+    </ul>
+  </nav>
+  {% block content %} {% endblock content %}
+</body>
+
+</html>

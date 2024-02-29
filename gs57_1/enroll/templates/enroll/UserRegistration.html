@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <link rel="stylesheet" href="{% static 'enroll/css/style.css' %}">
+</head>
+<body>
+  <form action="" method = "post">
+    {% csrf_token %}
+      {{form.as_p}}
+    <input type="submit" name="" id="" value= "submit">
+  </form>
+  
+  {% if messages %}
+    {% for message in messages %}
+      <span {% if message.tags %} class ="{{message.tags}}" {% endif %}> {{message}} </span>
+      <br>
+    {% endfor %}    
+  {% endif %}
+      
+</body>
+</html>
