@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="{% static 'enroll/css/userregistration.css' %}">
+</head>
+
+<body>
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+
+        {{form.non_field_errors}}
+        {% for field in form %}
+        <div> {{field.label_tag}} {{field}}
+            <!-- <span class="errorlist">{{field.errors | striptags}}</span>  -->
+            <!-- if you want to display error messages  in one htmltag -->
+            {% for error in field.errors %}
+            <span class="errorlist">{{error}}</span>
+            <!-- if you have different html tags in different error messages then use this  -->
+            {% endfor %}
+        </div>
+        <br>
+        {% endfor %}
+
+
+
+        <!-- striptags filter remove the html tags in the errors here -->
+
+        <input type="submit" name="submit">
+    </form>
+</body>

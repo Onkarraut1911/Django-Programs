@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Login</title>
-  </head>
-  <body>
-    <form action="" method="get">
-      <div>
-        <label for="id_name">name:</label>
-        <input type="text" name="name" required id="id_name" />
-      </div>
 
-      <div>
-        <label for="{{form.name.id_for_label}}">name:</label>
-        <input type="text" name="name" required id="id_name" />
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Login</title>
+</head>
 
-      <div>
-        <label for="{{form.name.id_for_label}}">name:</label>
-        {{form.name}}
-        <!-- input of name feild 
+<body>
+  <form action="" method="get">
+    <div>
+      <label for="id_name">name:</label>
+      <input type="text" name="name" required id="id_name" />
+    </div>
+
+    <div>
+      <label for="{{form.name.id_for_label}}">name:</label>
+      <input type="text" name="name" required id="id_name" />
+    </div>
+
+    <div>
+      <label for="{{form.name.id_for_label}}">name:</label>
+      {{form.name}}
+      <!-- input of name feild 
             feild is in form - 'name' is a 1 feild -->
-      </div>
+    </div>
 
-      <div>
-        {{form.name.label_tag}}
-        <input type="text" name="name" required id="id_name" />
-      </div>
+    <div>
+      {{form.name.label_tag}}
+      <input type="text" name="name" required id="id_name" />
+    </div>
 
-      <div>
-        {{form.name.label_tag}} {{form.name}}
-        <br />
-        <br />
-        <br />
-        {{form.name.html_name}}
-        <br />
-        <br />
-        <br />
-        {{form.email.help_text}}
-        <br />
-        <br />
-        <br />
-        {{form.name.field.required}}
-        <br />
-        <br />
-        <br />
-        {{form.name.value}}
-      </div>
-    </form>
-  </body>
+    <div>
+      {{form.name.label_tag}} {{form.name}}
+      <br />
+      <br />
+      <br />
+      {{form.name.html_name}}
+      <br />
+      <br />
+      <br />
+      {{form.email.help_text}}
+      <br />
+      <br />
+      <br />
+      {{form.name.field.required}}
+      <br />
+      <br />
+      <br />
+      {{form.name.value}}
+    </div>
+  </form>
+</body>
+
 </html>

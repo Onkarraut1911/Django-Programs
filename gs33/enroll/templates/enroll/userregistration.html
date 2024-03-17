@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+
+<body>
+    <form action="" method="get">
+
+
+        <!-- visible_fields is visible only visible fields , if this is not write then hidden filed lable and tag show in tamplate -->
+        <!-- this is generate code for hidden filed but not show in template  -->
+        {% for field in form.visible_fields %} {{field.label_tag}} {{field}} {%
+        endfor %}
+
+        <!-- if you want to hide lable then you can write this is work like visible_fields -->
+        <!-- Latest version of django is not important to write below code for hidding label in template -->
+        {% comment %} {% for hidden in form.hidden_fields %} {{hidden}} {% endfor
+        %} {% endcomment %}
+
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>

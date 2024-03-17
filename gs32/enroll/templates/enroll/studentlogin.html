@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Login</title>
-  </head>
-  <body>
-    <form action="" method="get"></form>
 
-     {% for field in form.visible_fields %} 
-     {{field.label_tag}}   
-     {{field}}    
-     {% endfor %}
-  
-     {% for hidden in form.hidden_fields %} 
-     {{hidden}}  
-     {% endfor %}
-  
-    <input type="submit" value="submit" />
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Login</title>
+</head>
+
+<body>
+  <form action="" method="get"></form>
+
+  {% comment %}
+  {{form.name.label}} <!-- label gives only label 'Name' and lable_tag give the label with label tag ':' -->
+  {{form.email.label}}
+  {{form.mobile.label}} <!-- output - Name Email Mobile -->
+  {% endcomment %}
+
+  {% for field in form %}
+  {{field.label_tag}} <!-- output - Name: Email: Mobile:  -->
+  {{field}} <!--  output - Name:[ ] Email:[ ] Mobile:[ ] add fields after label  -->
+  {% endfor %}
+
+  <input type="submit" value="submit" />
+</body>
+
 </html>

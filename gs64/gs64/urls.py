@@ -1,5 +1,5 @@
 """
-URL configuration for gs63 project.
+URL configuration for gs64 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,13 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from enroll import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signup/',views.sign_up , name='Signup'),
-    path('login/',views.user_login ,name='login'),
-    path('profile/',views.profile , name='profile'),
-    path('logout/',views.user_logout ,name='logout'),
-    path('changepass/',views.user_change_pass, name= 'changepass'),
-    path('changepass1/',views.user_change_pass1, name = 'changepass1'),
 ]
